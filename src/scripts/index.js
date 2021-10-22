@@ -57,13 +57,7 @@ document.addEventListener('click', event => {
     const href = tagName === 'A' ? event.target.href : event.target.dataset.target;
     const targetId = href.slice(href.indexOf('#') + 1);
     const offsetTop = document.getElementById(targetId).offsetTop;
-    let target = offsetTop;
-
-    if (window.scrollY <= topPadding) {
-      target -= 100 + navbar.offsetHeight;
-    } else {
-      target -= 100;
-    }
+    let target = offsetTop - 100;
 
     window.scrollTo({ top: target });
 
