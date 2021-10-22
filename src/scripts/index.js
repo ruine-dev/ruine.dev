@@ -35,23 +35,18 @@ function toggleMobileMenu(open) {
   const html = document.documentElement;
   const body = document.body;
   const mobileMenu = document.getElementById('mobile-navbar-menu');
+  const scrollLockClasses = ['overflow-y-hidden', 'sm:overflow-y-auto'];
+
   if (open) {
-    html.classList.add('overflow-y-hidden');
-    body.classList.add('overflow-y-hidden');
+    html.classList.add(...scrollLockClasses);
+    body.classList.add(...scrollLockClasses);
     mobileMenu.classList.remove('translate-x-full');
   } else {
-    html.classList.remove('overflow-y-hidden');
-    body.classList.remove('overflow-y-hidden');
+    html.classList.remove(...scrollLockClasses);
+    body.classList.remove(...scrollLockClasses);
     mobileMenu.classList.add('translate-x-full');
   }
 }
-
-window.onresize = function () {
-  const isMobile = window.innerWidth < 640;
-  if (!isMobile) {
-    toggleMobileMenu(false);
-  }
-};
 
 document.addEventListener('click', event => {
   if (event.target.href && event.target.href.includes('#') || event.target.dataset.target) {
