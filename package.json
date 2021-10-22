@@ -18,6 +18,6 @@
     "minifyJs": "minify ./src/scripts/index.js > ./dist/scripts/index.js",
     "minifyHtml": "minify ./src/index.html > ./dist/index.html",
     "style:prod": "cross-env NODE_ENV=production tailwindcss --postcss -i ./src/styles/tailwind.css -o ./dist/styles/index.css --minify",
-    "prod": "npm run minifyJs && npm run minifyHtml && npm run style:prod && cross-env cp ./src/images ./dist/images -r"
+    "prod": "npm run minifyJs && npm run minifyHtml && npm run style:prod && cross-env cp ./src/images ./dist/ -r"
   }
 }
