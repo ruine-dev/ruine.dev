@@ -2,11 +2,12 @@ window.onscroll = function () {
   addNavbarBackgroundOnScroll();
 };
 
+const body = document.body;
 const navbar = document.getElementById('navbar');
 const topPadding = 16 * 1.75;
 
 function addNavbarBackgroundOnScroll() {
-  const classes = [
+  const fixedNavbarClasses = [
     'fixed',
     'bg-white',
     'bg-opacity-80',
@@ -16,9 +17,11 @@ function addNavbarBackgroundOnScroll() {
     'border-gray-300',
   ];
   if (document.body.scrollTop > topPadding || document.documentElement.scrollTop > topPadding) {
-    navbar.classList.add(...classes);
+    navbar.classList.add(...fixedNavbarClasses);
+    body.style.paddingTop = `calc(${navbar.offsetHeight}px + 1.75rem)`;
   } else {
-    navbar.classList.remove(...classes);
+    navbar.classList.remove(...fixedNavbarClasses);
+    body.style.paddingTop = '';
   }
 }
 
@@ -33,7 +36,6 @@ attachment.onchange = function (event) {
 
 function toggleMobileMenu(open) {
   const html = document.documentElement;
-  const body = document.body;
   const mobileMenu = document.getElementById('mobile-navbar-menu');
   const scrollLockClasses = ['overflow-y-hidden', 'sm:overflow-y-auto'];
 
