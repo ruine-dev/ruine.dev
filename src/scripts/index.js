@@ -24,12 +24,17 @@ attachment.onchange = function (event) {
 };
 
 function toggleMobileMenu(open) {
+  const html = document.documentElement;
+  const body = document.body;
   const mobileMenu = document.getElementById('mobile-navbar-menu');
   if (open) {
+    html.classList.add('overflow-y-hidden');
+    body.classList.add('overflow-y-hidden');
     mobileMenu.classList.remove('translate-x-full')
   } else {
+    html.classList.remove('overflow-y-hidden');
+    body.classList.remove('overflow-y-hidden');
     mobileMenu.classList.add('translate-x-full')
-
   }
 }
 
