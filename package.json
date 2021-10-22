@@ -8,12 +8,16 @@
     "autoprefixer": "^10.3.7",
     "cross-env": "^7.0.3",
     "live-server": "^1.2.1",
+    "minify": "^8.0.3",
     "postcss": "^8.3.11",
     "tailwindcss": "^2.2.17"
   },
   "scripts": {
-    "serve": "live-server .",
-    "style": "tailwindcss --postcss -i ./styles/tailwind.css -o ./styles/index.css --watch",
-    "prod": "cross-env NODE_ENV=production tailwindcss --postcss -i ./styles/tailwind.css -o ./styles/index.css --minify"
+    "serve": "live-server src",
+    "style": "tailwindcss --postcss -i ./src/styles/tailwind.css -o ./src/styles/index.css --watch",
+    "minifyJs": "minify ./src/scripts/index.js > ./dist/scripts/index.js",
+    "minifyHtml": "minify ./src/index.html > ./dist/index.html",
+    "style:prod": "cross-env NODE_ENV=production tailwindcss --postcss -i ./src/styles/tailwind.css -o ./dist/styles/index.css --minify",
+    "prod": "npm run minifyJs && npm run minifyHtml && npm run style:prod && cross-env cp ./src/images ./dist/images -r"
   }
 }
