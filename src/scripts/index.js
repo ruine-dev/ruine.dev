@@ -6,16 +6,11 @@ const navbar = document.getElementById('navbar');
 const topPadding = 16 * 1.75;
 
 function addNavbarBackgroundOnScroll() {
+  const classes = ['fixed', 'bg-white', 'bg-opacity-80', 'backdrop-filter', 'backdrop-blur-xl', 'border-b', 'border-gray-300'];
   if (document.body.scrollTop > topPadding || document.documentElement.scrollTop > topPadding) {
-    navbar.style.position = 'fixed';
-    navbar.style.backgroundColor = 'rgba(255,255,255,0.85)';
-    navbar.style.backdropFilter = 'blur(32px)';
-    navbar.style.borderBottom = '1px solid #D1D5DB';
+    navbar.classList.add(...classes);
   } else {
-    navbar.style.position = '';
-    navbar.style.backgroundColor = '';
-    navbar.style.backdropFilter = '';
-    navbar.style.borderBottom = '';
+    navbar.classList.remove(...classes);
   }
 }
 
@@ -31,9 +26,10 @@ attachment.onchange = function (event) {
 function toggleMobileMenu(open) {
   const mobileMenu = document.getElementById('mobile-navbar-menu');
   if (open) {
-    mobileMenu.style.transform = 'translateX(0)';
+    mobileMenu.classList.remove('translate-x-full')
   } else {
-    mobileMenu.style.transform = '';
+    mobileMenu.classList.add('translate-x-full')
+
   }
 }
 
