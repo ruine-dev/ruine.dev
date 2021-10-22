@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Improve your bussiness with talented freelancers" />
+    <meta name="description" content="Improve your business with talented freelancers" />
     <title>ruine.dev</title>
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,6 +32,42 @@
         </svg>
       </div>
     </div>
+    <nav
+      id="mobile-navbar-menu"
+      class="fixed top-0 left-0 z-20 w-full h-full py-20 transition duration-500 transform translate-x-full bg-white/80 backdrop-filter backdrop-blur-md"
+    >
+      <button
+        onclick="toggleMobileMenu(false)"
+        class="absolute p-2 text-gray-500 rounded-full outline-none top-10 right-10 focus:ring-2 ring-blue-700"
+      >
+        <span class="sr-only">Close menu</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-8 h-8"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M20 20L4 4m16 0L4 20" />
+        </svg>
+      </button>
+      <ul class="space-y-16 text-4xl font-semibold text-center text-gray-600">
+        <li class="mb-24 font-medium text-gray-700">
+          ruine<span class="text-blue-600">.dev</span>
+        </li>
+        <li>
+          <a href="#services" class="rounded outline-none focus:ring-2 ring-blue-700">Services</a>
+        </li>
+        <li><a href="#works" class="rounded outline-none focus:ring-2 ring-blue-700">Works</a></li>
+        <li>
+          <a href="#contact" class="rounded outline-none focus:ring-2 ring-blue-700">Contact</a>
+        </li>
+      </ul>
+    </nav>
     <nav id="navbar" class="top-0 z-10 w-full py-5">
       <div class="max-w-md px-6 mx-auto sm:px-0 sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl">
         <div class="flex items-center justify-between">
@@ -40,7 +76,26 @@
             class="text-2xl font-medium text-gray-700 rounded outline-none focus:ring-2 ring-blue-700"
             >ruine<span class="text-blue-600">.dev</span></a
           >
-          <ul class="flex space-x-12 text-lg">
+          <button
+            onclick="toggleMobileMenu(true)"
+            class="text-gray-600 rounded outline-none sm:hidden focus:ring-2 ring-blue-700"
+          >
+            <span class="sr-only">Open menu</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 6h14M5 12h14M5 18h14" />
+            </svg>
+          </button>
+          <ul class="hidden space-x-12 text-lg sm:flex">
             <li>
               <a
                 href="#services"
@@ -69,13 +124,13 @@
     <div class="max-w-md px-6 mx-auto sm:px-0 sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl">
       <main class="pb-12 space-y-56">
         <header id="header" class="relative pt-6 mt-20 text-center">
-          <h1 class="text-6xl font-bold leading-tight text-gray-700">
-            Improve your <span class="text-blue-600">bussiness</span> with talented freelancers
+          <h1 class="text-5xl font-bold leading-tight text-gray-700 lg:text-6xl">
+            Improve your <span class="text-blue-600">business</span> with talented freelancers
           </h1>
-          <p class="mt-4 text-2xl text-gray-600">
+          <p class="mt-4 text-xl text-gray-600 lg:text-2xl">
             We’re ready to design, develop, and deploy the best solution.
           </p>
-          <div class="mt-8 space-x-4">
+          <div class="mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
             <a
               href="#contact"
               class="inline-flex px-8 py-3 text-lg font-medium tracking-wide text-white transition bg-blue-600 border border-transparent rounded-lg shadow-sm outline-none disabled:cursor-not-allowed disabled:opacity-60 active:scale-90 focus:ring-2 ring-offset-2 ring-blue-600 hover:bg-blue-700"
@@ -104,13 +159,15 @@
         <section id="services" class="relative">
           <header>
             <h2 class="inline px-1 text-lg font-medium text-blue-800 bg-blue-100">Services</h2>
-            <h3 class="text-5xl font-bold text-gray-700 mt-7">What do we do?</h3>
-            <h4 class="mt-4 text-2xl text-gray-600">
+            <h3 class="text-4xl font-bold text-gray-700 lg:text-5xl mt-7">What do we do?</h3>
+            <h4 class="mt-4 text-xl text-gray-600 lg:text-2xl">
               There are three kind of services we currently provide.
             </h4>
           </header>
-          <div class="grid grid-cols-3 mt-20 gap-x-8">
-            <article class="flex flex-col pb-8 text-center bg-white shadow rounded-2xl">
+          <div class="grid mt-20 md:grid-cols-4 lg:grid-cols-3 gap-x-8 gap-y-16">
+            <article
+              class="flex flex-col pb-8 text-center bg-white shadow md:col-span-2 lg:col-span-1 rounded-2xl"
+            >
               <div
                 class="flex items-center justify-center w-16 h-16 mx-auto -mt-8 text-white bg-blue-600 rounded-2xl"
               >
@@ -131,8 +188,8 @@
                   <rect x="14" y="14" width="7" height="7" rx="1" />
                 </svg>
               </div>
-              <h5 class="mt-6 text-2xl font-medium text-gray-600">UI Design</h5>
-              <p class="px-6 mt-4 text-lg text-gray-600 pb-9">
+              <h5 class="mt-6 text-xl font-medium text-gray-600 lg:text-2xl">UI Design</h5>
+              <p class="px-6 mt-4 text-gray-600 lg:text-lg pb-9">
                 Builds beautiful user interface by using flexible and consistent design rules.
               </p>
               <p class="sr-only">We use Figma for user interface design</p>
@@ -165,7 +222,9 @@
                 />
               </svg>
             </article>
-            <article class="flex flex-col pb-8 text-center bg-white shadow rounded-2xl">
+            <article
+              class="flex flex-col pb-8 text-center bg-white shadow md:col-span-2 lg:col-span-1 rounded-2xl"
+            >
               <div
                 class="flex items-center justify-center w-16 h-16 mx-auto -mt-8 text-white bg-blue-600 rounded-2xl"
               >
@@ -186,8 +245,8 @@
                   <path d="M8 20h8" />
                 </svg>
               </div>
-              <h5 class="mt-6 text-2xl font-medium text-gray-600">Web Development</h5>
-              <p class="px-6 mt-4 text-lg text-gray-600 pb-9">
+              <h5 class="mt-6 text-xl font-medium text-gray-600 lg:text-2xl">Web Development</h5>
+              <p class="px-6 mt-4 text-gray-600 lg:text-lg pb-9">
                 Creates a website that actually solves your problem more effectively.
               </p>
               <p class="sr-only">We use Laravel and React for website development</p>
@@ -226,7 +285,9 @@
                 </svg>
               </div>
             </article>
-            <article class="flex flex-col pb-8 text-center bg-white shadow rounded-2xl">
+            <article
+              class="flex flex-col pb-8 text-center bg-white shadow md:col-start-2 md:col-end-4 lg:col-span-1 rounded-2xl"
+            >
               <div
                 class="flex items-center justify-center w-16 h-16 mx-auto -mt-8 text-white bg-blue-600 rounded-2xl"
               >
@@ -247,8 +308,8 @@
                   <rect x="14" y="14" width="7" height="7" rx="1" />
                 </svg>
               </div>
-              <h5 class="mt-6 text-2xl font-medium text-gray-600">Mobile Development</h5>
-              <p class="px-6 mt-4 text-lg text-gray-600 pb-9">
+              <h5 class="mt-6 text-xl font-medium text-gray-600 lg:text-2xl">Mobile Development</h5>
+              <p class="px-6 mt-4 text-gray-600 lg:text-lg pb-9">
                 Brings the solution across different devices with high performance.
               </p>
               <p class="sr-only">We use Flutter for mobile development</p>
@@ -313,18 +374,21 @@
         <section id="works" class="relative">
           <header class="text-center">
             <h2 class="inline px-1 text-lg font-medium text-blue-800 bg-blue-100">Works</h2>
-            <h3 class="text-5xl font-bold text-gray-700 mt-7">Our cool projects</h3>
-            <h4 class="mt-4 text-2xl text-gray-600">
+            <h3 class="text-4xl font-bold text-gray-700 lg:text-5xl mt-7">Our cool projects</h3>
+            <h4 class="mt-4 text-xl text-gray-600 lg:text-2xl">
               The solutions that we came up for our client’s problems.
             </h4>
           </header>
-          <div class="grid grid-cols-2 mt-20 gap-x-8">
+          <div class="grid grid-cols-1 gap-8 mt-20 text-center lg:text-left lg:grid-cols-2">
             <article
               class="
                 relative
                 px-10
                 pt-10
-                pb-[260px]
+                lg:pb-[260px]
+                md:pb-[270px]
+                sm:pb-52
+                pb-44
                 text-white
                 bg-blue-500
                 rounded-xl
@@ -339,10 +403,16 @@
                 alt="Exam Registration Management Preview"
                 class="
                   max-w-none
+                  lg:w-full
+                  w-4/5
                   absolute
-                  object-cover
-                  bottom-[-22px]
-                  left-16
+                  lg:bottom-[-22px]
+                  -bottom-4
+                  lg:left-16
+                  left-1/2
+                  transform
+                  -translate-x-1/2
+                  lg:translate-x-0
                   rounded-lg
                   shadow-2xl
                 "
@@ -353,7 +423,10 @@
                 relative
                 px-10
                 pt-10
-                pb-[260px]
+                lg:pb-[260px]
+                md:pb-[270px]
+                sm:pb-52
+                pb-44
                 text-white
                 bg-blue-500
                 rounded-xl
@@ -368,10 +441,16 @@
                 alt="PHPID Online Learning Preview"
                 class="
                   max-w-none
+                  lg:w-full
+                  w-4/5
                   absolute
-                  object-cover
-                  bottom-[-22px]
-                  left-16
+                  lg:bottom-[-22px]
+                  -bottom-4
+                  lg:left-16
+                  left-1/2
+                  transform
+                  -translate-x-1/2
+                  lg:translate-x-0
                   rounded-lg
                   shadow-2xl
                 "
@@ -403,8 +482,8 @@
         <section id="contact" class="relative">
           <header class="text-center">
             <h2 class="inline px-1 text-lg font-medium text-blue-800 bg-blue-100">Contact</h2>
-            <h3 class="text-5xl font-bold text-gray-700 mt-7">Want to work with us?</h3>
-            <h4 class="mt-4 text-2xl text-gray-600">
+            <h3 class="text-4xl font-bold text-gray-700 lg:text-5xl mt-7">Want to work with us?</h3>
+            <h4 class="mt-4 text-xl text-gray-600 lg:text-2xl">
               Share us the details of the problem you’re troubled with.
             </h4>
           </header>
@@ -413,11 +492,11 @@
               action="https://getform.io/f/6c38f1ad-65d8-4f04-bf87-20bb1813f9ed"
               method="POST"
               enctype="multipart/form-data"
-              class="grid w-2/3 grid-cols-1 mx-auto xl:w-1/2 gap-y-6"
+              class="grid w-full grid-cols-1 mx-auto lg:w-2/3 xl:w-1/2 gap-y-6"
             >
-              <div class="grid grid-cols-2 gap-x-4">
+              <div class="grid sm:grid-cols-2 gap-x-4 gap-y-6">
                 <div class="flex flex-col space-y-3">
-                  <label for="firstName" class="text-xl font-medium text-gray-500"
+                  <label for="firstName" class="text-lg font-medium text-gray-500 lg:text-xl"
                     >First name</label
                   >
                   <input
@@ -429,7 +508,9 @@
                   />
                 </div>
                 <div class="flex flex-col space-y-3">
-                  <label for="lastName" class="text-xl font-medium text-gray-500">Last name</label>
+                  <label for="lastName" class="text-lg font-medium text-gray-500 lg:text-xl"
+                    >Last name</label
+                  >
                   <input
                     id="lastName"
                     name="lastName"
@@ -440,7 +521,9 @@
                 </div>
               </div>
               <div class="flex flex-col space-y-3">
-                <label for="email" class="text-xl font-medium text-gray-500">Email</label>
+                <label for="email" class="text-lg font-medium text-gray-500 lg:text-xl"
+                  >Email</label
+                >
                 <input
                   id="email"
                   name="email"
@@ -452,7 +535,7 @@
               </div>
               <div class="flex flex-col space-y-3">
                 <div class="flex justify-between">
-                  <label for="attachment" class="text-xl font-medium text-gray-500"
+                  <label for="attachment" class="text-lg font-medium text-gray-500 lg:text-xl"
                     >Attachment</label
                   >
                   <span class="text-xl text-gray-400">Optional</span>
@@ -479,7 +562,9 @@
                 </div>
               </div>
               <div class="flex flex-col space-y-3">
-                <label for="message" class="text-xl font-medium text-gray-500">Message</label>
+                <label for="message" class="text-lg font-medium text-gray-500 lg:text-xl"
+                  >Message</label
+                >
                 <textarea
                   id="message"
                   name="message"
@@ -573,6 +658,22 @@
         }
       };
 
+      function toggleMobileMenu(open) {
+        const mobileMenu = document.getElementById('mobile-navbar-menu');
+        if (open) {
+          mobileMenu.style.transform = 'translateX(0)';
+        } else {
+          mobileMenu.style.transform = '';
+        }
+      }
+
+      window.onresize = function () {
+        const isMobile = window.innerWidth < 640;
+        if (!isMobile) {
+          toggleMobileMenu(false);
+        }
+      }
+
       document.querySelectorAll('[href^="#"]').forEach(link => {
         link.onclick = function (event) {
           event.preventDefault();
@@ -589,6 +690,12 @@
           }
 
           window.scrollTo({ top: target });
+
+          const isMobileMenu =
+            event.target.parentElement.parentElement.parentElement.id === 'mobile-navbar-menu';
+          if (isMobileMenu) {
+            toggleMobileMenu(false);
+          }
         };
       });
     </script>
